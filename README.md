@@ -3,6 +3,7 @@
 `vue + vuex + vue-router + moment + axios + spirit-ui`
 ## 预览
 [在线预览](https://yuan204.github.io/vue-cnode/)
+![](https://raw.githubusercontent.com/yuan204/vue-cnode/master/public/img/vue-cnode.gif)
 
 ## 功能
 + 主题首页
