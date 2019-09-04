@@ -26,7 +26,7 @@
                 :current-page.sync="page"
         ></s-page>
       </div>
-      <div class="sidebar">
+      <div class="sideBarList">
         <UserIntro v-if="$store.getters.isLogin" :author="$store.state.user" title="个人信息"></UserIntro>
         <Login  v-else></Login>
       </div>
@@ -118,7 +118,7 @@ export default {
   .home-container {
     display: flex;
   }
-   .sidebar {
+   .sideBarList {
      width: 290px;
      margin-left: 20px;
    }

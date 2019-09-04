@@ -5,6 +5,8 @@ import Spirit from 'spirit-ui';
 import 'spirit-ui/dist/spirit-ui.css';
 import store from "@/store";
 import axios from "axios";
+import "./style/common.css"
+import "./style/reset.css"
 
 Vue.use(Spirit)
 Vue.config.productionTip = false

@@ -11,7 +11,8 @@
                     <span>{{topic.visit_count}} 次浏览</span>
                     <span>来自 {{map[topic.tab]}}</span>
                 </div>
-                <div v-if="$store.getters.isLogin">
+                <br>
+                <div v-if="$store.getters.isLogin" style="margin-top: 10px">
                     <button class="collect" @click="collect" v-if="!isCollect">收藏</button>
                     <button class="cancel-collect" @click="cancelCollect" v-else>取消收藏</button>
                 </div>

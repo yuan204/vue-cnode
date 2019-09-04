@@ -41,4 +41,11 @@
     a {
           color: #08c;
       }
+
+    li {
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
 </style>

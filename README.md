@@ -1,29 +1,25 @@
 # vue-cnode
+## 技术栈
+`vue + vuex + vue-router + moment + axios + spirit-ui`
+## 预览
+[在线预览](https://yuan204.github.io/vue-cnode/)
 
+## 功能
++ 主题首页
++ 主题详情
++ 收藏主题
++ 取消收藏主题
++ 用户所收藏的主题
++ 用户详情
++ 获取未读消息数
++ 获取已读和未读消息
++ 标记单个消息为已读
++ 通过access-token登录
 ## Project setup
 ```
 yarn install
-```
-
-### Compiles and hot-reloads for development
-```
+# Compiles and hot-reloads for development
 yarn run serve
-```
-
-### Compiles and minifies for production
-```
+# Compiles and minifies for production
 yarn run build
 ```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

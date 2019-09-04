@@ -2,3 +2,17 @@
     max-width: 1400px;
     margin: 0 auto;
 }
+
+@media (max-width:992px) {
+   .sideBarList {
+        display: none !important;
+    }
+
+
+}
+
+.user-topics .post .title {
+    width: calc(100% - 100px);
+}
+
+

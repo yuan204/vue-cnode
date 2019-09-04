@@ -80,6 +80,12 @@
     }
     .title {
         font-size: 16px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        width: calc(100% - 250px);
+        margin-right: 10px;
 
     }
     .count {

@@ -1,19 +1,21 @@
 <template>
-<SideBar>
-    <template #header>
-        <router-link :to="{name:'home'}" class="header">主页</router-link> / 新消息
-    </template>
-    <template #content>
-        <ul v-if="messages.length > 0">
-            <li v-for="message in messages" class="message" :key="message.id" @click="markOne(message.id)">
-                <router-link :to="{name:'user',params:{id:message.author.loginname}}">{{message.author.loginname}}</router-link>
-                回复了你的话题
-                <router-link :to="{name:'topic',params:{id:message.topic.id}}">{{message.topic.title}}</router-link>
-            </li>
-        </ul>
-        <p v-else>无消息</p>
-    </template>
-</SideBar>
+    <SideBar>
+        <template #header>
+            <router-link :to="{name:'home'}" class="header">主页</router-link>
+            / 新消息
+        </template>
+        <template #content>
+            <ul v-if="messages.length > 0">
+                <li v-for="message in messages" class="message" :key="message.id" @click="markOne(message.id)">
+                    <router-link :to="{name:'user',params:{id:message.author.loginname}}">{{message.author.loginname}}
+                    </router-link>
+                    回复了你的话题
+                    <router-link :to="{name:'topic',params:{id:message.topic.id}}">{{message.topic.title}}</router-link>
+                </li>
+            </ul>
+            <p v-else>无消息</p>
+        </template>
+    </SideBar>
 </template>
 
 <script>
@@ -31,7 +33,7 @@
         },
         methods: {
             markOne(id) {
-                axios.post(` https://cnodejs.org/api/v1/message/mark_one/${id}`,{
+                axios.post(` https://cnodejs.org/api/v1/message/mark_one/${id}`, {
                     accesstoken: this.$store.state.accessToken
                 })
             }
@@ -42,14 +44,23 @@
 </script>
 
 <style scoped>
-.message {
-    padding: 10px 5px;
-    border-bottom: 1px solid #F0F0F0;
-}
-a {
-    color: #08c;
-}
+    .message {
+        padding: 10px 5px;
+        border-bottom: 1px solid #F0F0F0;
+    }
+
+    a {
+        color: #08c;
+    }
+
     .header {
         color: #80bd01;
+    }
+
+    li {
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
     }
 </style>
