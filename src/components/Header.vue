@@ -16,9 +16,14 @@
                             <router-link :to="{name:'messages'}" >
                              <span class="message-count" v-if="$store.state.messageCount > 0">{{$store.state.messageCount}}</span>  未读消息
                             </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{name:'create'}">发布话题</router-link>
+                        </li>
                         <li>
                             <router-link :to="{name:'home'}" @click.native="exit">退出</router-link>
                         </li>
+
                     </ul>
                     <ul v-else>
                         <li>

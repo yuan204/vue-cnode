@@ -3,6 +3,18 @@
        <main>
            <Article :topic="topic"></Article>
            <CommentList :replies="topic.replies" class="comment-list"></CommentList>
+           <div class="reply" v-if="$store.getters.isLogin">
+               <h3 style="padding:15px">回复</h3>
+               <s-form ref="formInline" :model="formInline" :rules="ruleInline" >
+                   <s-form-item prop="editor" class="editor">
+                       <textarea v-model="formInline.editor" id="markdown-editor"></textarea>
+                   </s-form-item>
+                   <s-form-item class="btn">
+                       <s-button type="primary" @click="handleSubmit('formInline')">回复</s-button>
+                   </s-form-item>
+               </s-form>
+           </div>
+
        </main>
 
         <div class="sideBarList" >
@@ -26,12 +38,14 @@
 </template>
 
 <script>
+    import SimpleMDE from "simplemde";
     import Article from "@/components/Article";
     import SideBar from "@/components/SideBar";
     import axios from "axios";
     import CommentList from "@/components/CommentList";
     import NoReplies from "@/components/NoReplies";
     import UserIntro from "@/components/UserIntro";
+
 
 
 
@@ -48,7 +62,18 @@
         data() {
             return {
                 topic: null,
-                author: null
+                author: null,
+                formInline: {
+                    editor: "",
+                },
+                simplemde: null,
+                ruleInline: {
+
+                    editor: [
+                        {required: true, message: '必需填写内容', trigger: 'change'},
+
+                    ]
+                }
             }
         },
         methods: {
@@ -60,9 +85,19 @@
                     })
                     .then(response => {
                         this.author = response.data.data;
-
+                        this.simplemde = new SimpleMDE({element: document.getElementById("markdown-editor")});
                     })
 
+            },
+            publish() {
+                this.$message({
+                    type: "error",
+                    message: "回复的接口已被cnode社区下线，所以该功能暂时无法使用",
+                    duration: 1000
+                })
+            },
+            handleSubmit(name) {
+                this.$refs[name].validate(this.publish, this.publish)
             }
         },
         watch: {
@@ -73,7 +108,8 @@
         },
         created() {
           this.getData()
-        }
+        },
+
 
     }
 </script>
@@ -115,4 +151,10 @@ main {
     a {
         color: #778087;
     }
+    .reply {
+        margin-top: 20px;
+        background-color: #fff;
+        padding-top: 20px;
+    }
+
 </style>

@@ -7,7 +7,7 @@ import store from "@/store";
 import axios from "axios";
 import "./style/common.css"
 import "./style/reset.css"
-
+import 'simplemde/dist/simplemde.min.css'
 Vue.use(Spirit)
 Vue.config.productionTip = false
 import moment from "moment";

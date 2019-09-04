@@ -9,7 +9,7 @@
                 <span>{{layer}}楼•{{reply.create_at | fromNow}}</span>
             </span>
             <span class="like">
-                 <i class="iconfont icon-like" ></i>
+                 <i class="iconfont icon-like" @click="like"></i>
                 <span>{{reply.ups.length}}</span>
             </span>
         </div>
@@ -29,6 +29,15 @@
             },
             layer: {
                 type:Number
+            }
+        },
+        methods: {
+            like() {
+                this.$message({
+                    type: "error",
+                    message: "点赞的接口已被cnode社区下线，所以该功能暂时无法使用",
+                    duration: 1000
+                })
             }
         },
     }
@@ -71,5 +80,6 @@
     .like i {
         display: inline-block;
         margin-right: 5px;
+        cursor: pointer;
     }
 </style>

@@ -6,6 +6,7 @@ import User from "@/views/User";
 import Login from "@/views/Login";
 import Messages from "@/views/Messages";
 import Collection from "@/views/Collection";
+import Create from "@/views/Create";
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
       path: "/user/:user/collections",
       name: "collections",
       component: Collection
-    }
+    },
+ {
+   path: "/create",
+       name: "create",
+     component:  Create
+ }
   ]
 })
